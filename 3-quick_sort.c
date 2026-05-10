@@ -1,5 +1,10 @@
 #include "sort.h"
 
+/**
+ * swap - swaps two integers
+ * @a: first integer
+ * @b: second integer
+ */
 void swap(int *a, int *b)
 {
 	int temp;
@@ -9,6 +14,15 @@ void swap(int *a, int *b)
 	*b = temp;
 }
 
+/**
+ * partition - partitions the array using Lomuto scheme
+ * @array: array to partition
+ * @low: start index
+ * @high: end index
+ * @size: size of array
+ *
+ * Return: pivot index
+ */
 int partition(int *array, int low, int high, size_t size)
 {
 	int pivot;
@@ -41,6 +55,13 @@ int partition(int *array, int low, int high, size_t size)
 	return (i + 1);
 }
 
+/**
+ * quick_sort_rec - sorts an array using recursion
+ * @array: array to sort
+ * @low: start index
+ * @high: end index
+ * @size: size of array
+ */
 void quick_sort_rec(int *array, int low, int high, size_t size)
 {
 	int p;
@@ -66,3 +87,4 @@ void quick_sort(int *array, size_t size)
 
 	quick_sort_rec(array, 0, size - 1, size);
 }
+
